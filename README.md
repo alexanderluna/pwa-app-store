@@ -5,8 +5,8 @@ This is the repository for a Progressive Web App store. PWAs are web apps that a
 ## Installation
 
 ```bash
-git clone xxx
-cd xxx
+git clone git@github.com:alexanderluna/pwa-app-store.git
+cd pwa-app-store
 
 yarn install
 yarn start
