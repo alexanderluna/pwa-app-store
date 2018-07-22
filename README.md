@@ -12,4 +12,8 @@ yarn install
 yarn start
 ```
 
+to deploy the app to github pages:
 
+```bash
+yarn deploy
+```
