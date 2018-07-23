@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Link} from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
+import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
 class TopBar extends Component {
@@ -11,9 +11,13 @@ class TopBar extends Component {
         <AppBar color="primary" style={{ position: "static" }}>
           <Toolbar>
             <Typography variant="title" color="inherit">
-              <Link to="/" style={{ color: 'white', textDecoration: 'none' }}>
+              <Button
+                style={{fontSize: '1.5rem', color: 'white'}}
+                href="/pwa-app-store/"
+                size="large"
+                variant="flat">
                 PWA App Store
-              </Link>
+              </Button>
             </Typography>
           </Toolbar>
         </AppBar>

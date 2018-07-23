@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import blue from '@material-ui/core/colors/blue';
 import TopBar from './TopBar';
-import CategoryList from './CategoryList';
 import Detail from './Detail';
 import Home from './Home';
 import '../styles/App.css';
@@ -14,13 +13,13 @@ class App extends Component {
   render() {
     return (
       <MuiThemeProvider theme={theme}>
-        <BrowserRouter>
+        <BrowserRouter basename="/pwa-app-store">
           <div>
             <TopBar></TopBar>
             <Switch>
               <Route exact path="/" component={Home}></Route>
               <Route path="/detail/:id" component={Detail}></Route>
-              <Route path="/category/:id" component={CategoryList}></Route>
+              <Route path="/category/:category" component={Home}></Route>
             </Switch>
           </div>
         </BrowserRouter>
