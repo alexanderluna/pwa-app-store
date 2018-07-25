@@ -14,5 +14,5 @@ export const getAllCategories = () => {
   return DB.projects.map(project => project.category)
 }
 export const getByCategory = (category) => {
-  return DB.projects.filter(project => project.categories.include(category))
+  return DB.projects.filter(project => project.category === category)
 }
