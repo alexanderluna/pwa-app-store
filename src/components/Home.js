@@ -12,30 +12,31 @@ class Home extends Component {
     this.state = {
       projects: [],
       categories: [],
-      category: "",
-      hasCategory: false
+      category: ""
     }
   }
 
-  componentDidMount() {
-    const category = this.props.match.params.category;
+  componentDidMount(category = this.props.match.params.category) {
     const projects = category ? getByCategory(category) : getAllProjects();
     const categories = getAllCategories();
-    this.setState({
-      projects: [...projects],
-      categories: [...categories],
-      category: category,
-      hasCategory: category ? true : false
-    });
+    this.setState({ projects, categories, category });
   }
 
   render() {
-    const { projects, categories, hasCategory, category } = this.state;
+    const { projects, categories, category } = this.state;
     return (
       <center>
         <CategoryList categories={categories}/>
-        <Input style={{ maxWidth: '60vw'}} type="search" fullWidth={true} style={{ flex: 1 }} placeholder="Search..."></Input>
-        <Typography variant="headline">Projects for: {category || 'All'}</Typography>
+        <Input
+          style={{ maxWidth: '60vw'}}
+          type="search"
+          fullWidth={true}
+          placeholder="Search..."
+        />
+        <Typography
+          variant="headline">
+          Projects for: {category || 'All'}
+        </Typography>
         { projects.map((project, id) =>
           <ProjectCard key={id} project={project} />
         )}
