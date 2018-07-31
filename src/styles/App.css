@@ -1,28 +1,62 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #eee;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.detailCard {
+  margin-top: 2rem;
+  width: 90vw;
+  margin: 2rem auto;
+  border-radius: 6px !important;
+  overflow: unset !important;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.detailImage {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 3px;
+  float: left;
+  margin: -0.6rem;
 }
 
-.App-title {
-  font-size: 1.5em;
+.detailAuthor {
+  color: #a9a9a9 !important;
 }
 
-.App-intro {
-  font-size: large;
+.detailName, .detailAuthor {
+  font-weight: 100 !important;
+  text-align: right;
+  padding: 0.2rem 1rem 0.4rem 0rem;
+  /* min-height: 2rem; */
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.detailInstall {
+  float: right;
+  margin-right: 1rem !important;
+}
+
+.detailDescription {
+  margin-top: 2rem !important;
+  text-align: justify;
+  padding: 1rem;
+}
+
+.cardFooter {
+  border-top: 0.1px solid #eee;
+  padding: 0.2rem 0;
+  margin: auto;
+  width: 90%;
+}
+
+
+@media (min-width: 750px) {
+  .detailCard {
+    margin: 2rem;
+    width: 30vw;
+  }
+  .detailDescription {
+    margin-top: 3rem !important;
+  }
 }
