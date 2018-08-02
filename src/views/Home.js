@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { getAllProjects, getAllCategories, getByCategory } from '../services/Project';
-import ProjectCard from './ProjectCard';
-import CategoryList from './CategoryList';
+import ProjectCard from '../components/Card/ProjectCard';
+import CategoryList from '../components/List/CategoryList';
 import Typography from '@material-ui/core/Typography';
 import Input from '@material-ui/core/Input';
 

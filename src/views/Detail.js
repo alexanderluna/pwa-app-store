@@ -26,7 +26,7 @@ class Detail extends Component {
     this.setState({ tabIndex });
   }
   render() {
-    const { name, description, image, author, link, category } = this.state.project;
+    const { name, description, image, author, category } = this.state.project;
     const { tabIndex } = this.state;
     return (
       <div>
