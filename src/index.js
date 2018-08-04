@@ -19,7 +19,6 @@ ReactDOM.render(
         <Switch>
           <Route exact path="/" component={Home}></Route>
           <Route path="/detail/:id" component={Detail}></Route>
-          <Route path="/category/:category" component={Home}></Route>
         </Switch>
       </div>
     </BrowserRouter>

@@ -4,6 +4,7 @@ import ProjectCard from '../components/Card/ProjectCard';
 import CategoryList from '../components/List/CategoryList';
 import Typography from '@material-ui/core/Typography';
 import Input from '@material-ui/core/Input';
+import Button from '@material-ui/core/Button';
 
 class Home extends Component {
 
@@ -12,8 +13,10 @@ class Home extends Component {
     this.state = {
       projects: [],
       categories: [],
-      category: ""
+      filter: ''
     }
+    this.setFilter = this.setFilter.bind(this);
+    this.byCategory = this.byCategory.bind(this);
   }
 
   componentDidMount(category = this.props.match.params.category) {
@@ -22,11 +25,19 @@ class Home extends Component {
     this.setState({ projects, categories, category });
   }
 
+  setFilter(filter) {
+    this.setState({ filter })
+  }
+
+  byCategory(filter = this.state.filter) {
+    return project => project.category.includes(filter)
+  }
+
   render() {
-    const { projects, categories, category } = this.state;
+    const { projects, categories, filter } = this.state;
     return (
       <center>
-        <CategoryList categories={categories}/>
+        <CategoryList categories={categories} handler={this.setFilter}/>
         <Input
           style={{ maxWidth: '60vw'}}
           type="search"
@@ -35,9 +46,18 @@ class Home extends Component {
         />
         <Typography
           variant="headline">
-          Projects for: {category || 'All'}
+          Projects for: {filter || 'All'}
         </Typography>
-        { projects.map((project, id) =>
+        { filter !== '' &&
+          <Button
+            style={{display: 'block', margin: '1rem'}}
+            onClick={() => this.setFilter('')}
+            variant="contained"
+            color="secondary">
+            Dismiss filter
+          </Button>
+        }
+        { projects.filter(this.byCategory()).map((project, id) =>
           <ProjectCard key={id} project={project} />
         )}
       </center>
