@@ -33,23 +33,6 @@ class ProjectCard extends Component {
           </Button>
         </CardActions>
       </Card>
-
-      /* <Card key={id} style={{ margin: '0.5rem', maxWidth: 300, display: 'inline-flex' }}>
-        <div style={{display: 'flex',flexDirection: 'column'}}>
-          <CardContent style={{flex: '1 0 auto', padding: '0.5rem'}}>
-            <Typography variant="headline">{ project.name }</Typography>
-            <Typography variant="subheading" color="textSecondary">By { project.author}</Typography>
-            <CardActions>
-              <Button variant="outlined" size="medium" fullWidth={true} color="primary">Download</Button>
-            </CardActions>
-          </CardContent>
-        </div>
-        <CardMedia
-          style={{width: 145,height: 160}}
-          image={ project.image}
-          title="Live from space album cover"
-        />
-      </Card> */
     )
   }
 }
