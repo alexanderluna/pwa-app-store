@@ -4,15 +4,15 @@ import Typography from '@material-ui/core/Typography';
 
 class CategoryList extends Component {
   render() {
-    const { categories } = this.props;
+    const { categories, handler } = this.props;
     return(
-      <div>
+      <div className="categories">
         <Typography variant="subheading">Browse by Category</Typography>
-        <div style={{display: 'inline-flex', maxWidth: '90vw', overflow: 'scroll'}}>
+        <div className="categoryList">
           { categories.map((category, id) =>
             <Button
               key={id}
-              href={`/pwa-app-store/category/${category}`}
+              onClick={() => handler(category)}
               style={{ margin: '1rem 0.5rem' }}
               variant="outlined"
               color="primary"
