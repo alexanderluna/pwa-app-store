@@ -5,6 +5,16 @@ body {
   background-color: #eee;
 }
 
+.categories {
+  margin: 1rem;
+}
+
+.categoryList {
+  display: inline-flex;
+  max-width: 95vw;
+  overflow: scroll;
+}
+
 .detailCard {
   margin-top: 2rem;
   width: 90vw;
@@ -44,7 +54,7 @@ body {
 }
 
 .cardFooter {
-  border-top: 0.1px solid #eee;
+  border-top: 2px solid #eee;
   padding: 0.2rem 0;
   margin: auto;
   width: 90%;
