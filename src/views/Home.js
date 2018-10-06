@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getAllProjects, getAllCategories, getByCategory } from '../services/Project';
+import { getAllProjects, getAllCategories } from '../services/Project';
 import ProjectCard from '../components/Card/ProjectCard';
 import CategoryList from '../components/List/CategoryList';
 import Typography from '@material-ui/core/Typography';
@@ -19,10 +19,10 @@ class Home extends Component {
     this.byCategory = this.byCategory.bind(this);
   }
 
-  componentDidMount(category = this.props.match.params.category) {
-    const projects = category ? getByCategory(category) : getAllProjects();
+  componentDidMount() {
+    const projects = getAllProjects();
     const categories = getAllCategories();
-    this.setState({ projects, categories, category });
+    this.setState({ projects, categories });
   }
 
   setFilter(filter) {
@@ -37,9 +37,9 @@ class Home extends Component {
     const { projects, categories, filter } = this.state;
     return (
       <center>
-        <CategoryList categories={categories} handler={this.setFilter}/>
+        <CategoryList categories={categories} handler={this.setFilter} />
         <Input
-          style={{ maxWidth: '60vw'}}
+          style={{ maxWidth: '60vw' }}
           type="search"
           fullWidth={true}
           placeholder="Search..."
@@ -48,16 +48,16 @@ class Home extends Component {
           variant="headline">
           Projects for: {filter || 'All'}
         </Typography>
-        { filter !== '' &&
+        {filter &&
           <Button
-            style={{display: 'block', margin: '1rem'}}
+            style={{ display: 'block', margin: '1rem' }}
             onClick={() => this.setFilter('')}
             variant="contained"
             color="secondary">
             Dismiss filter
           </Button>
         }
-        { projects.filter(this.byCategory()).map((project, id) =>
+        {projects.filter(this.byCategory()).map((project, id) =>
           <ProjectCard key={id} project={project} />
         )}
       </center>
