@@ -51,4 +51,20 @@ tree .
     └── About
 ```
 
+Each Application has the following data structure:
+
+```json
+{
+  "name": "Example",
+  "author": "Alexander",
+  "link": "https://github.com/alexanderluna",
+  "description": "A lengthy description of what this app does",
+  "logo": "https://example.com/app_logo.png",
+  "screenshots": [
+    "https://example.com/screenshot1.png",
+    "https://example.com/screenshot2.png",
+    "https://example.com/screenshot3.png"
+  ]
+}
+```
 ## Bugs
